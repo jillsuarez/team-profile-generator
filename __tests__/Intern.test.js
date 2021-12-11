@@ -7,5 +7,5 @@ test('Employee School', () => {
     expect(intern.getSchool()).toBe("school1");
   });
   test('Employee Role', () => {
-    expect(intern.getRole()).toBe("intern");
+    expect(intern.getRole()).toBe("Intern");
   });

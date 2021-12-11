@@ -1,7 +1,7 @@
 const path = require("path");
 const Employee = require("../lib/Employee");
 
-const employee = new Employee("jeff", "123", "jeff@email.com", "employee")
+const employee = new Employee("jeff", "123", "jeff@email.com", "Employee")
 
 test('Employee Name', () => {
     expect(employee.getName()).toBe("jeff");

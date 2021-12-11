@@ -56,12 +56,12 @@ function promptUser(){
             }
         }
     ];
-    inquirer.prompt(manQuestions).then(answer => {
+    return inquirer.prompt(manQuestions).then(answer => {
         const manager = new Manager(answer.manName, answer.manId, answer.manEmail, answer.manOffice);
         teamMembers.push(manager);
-        console.log(teamMembers);
+        // console.log(teamMembers);
     })
-    .then(promptEmployee);
+    
 }
 
 
@@ -155,8 +155,10 @@ function promptEmployee(){
             }
             return promptEmployee();
         }
+        
     })
-    .then(buildTeam());
+        
+    // console.log(teamMembers)
 };
 
 function buildTeam(){
@@ -164,7 +166,10 @@ function buildTeam(){
     if (!fs.existsSync(targetDirectory)){
         fs.mkdirSync(targetDirectory)
     }
-    fs.writeFileSync(path.join(targetDirectory,"team.html"),pageBuilder(), "utf-8");
+    // console.log(pageBuilder(teamMembers));
+    fs.writeFileSync(path.join(targetDirectory,"team.html"),pageBuilder(teamMembers), "utf-8");
 }
 
-promptUser();
+promptUser()
+.then(promptEmployee)
+.then(buildTeam);
