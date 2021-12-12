@@ -155,9 +155,8 @@ function promptEmployee(){
             }
             return promptEmployee();
         }
-        
     })
-        
+    .then(buildTeam); 
     // console.log(teamMembers)
 };
 
@@ -172,4 +171,5 @@ function buildTeam(){
 
 promptUser()
 .then(promptEmployee)
-.then(buildTeam);
+// .then(buildTeam); 
+

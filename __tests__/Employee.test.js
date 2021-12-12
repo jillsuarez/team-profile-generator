@@ -13,6 +13,6 @@ test('Employee Email', () => {
     expect(employee.getEmail()).toBe("jeff@email.com");
   });
 test('Employee Role', () => {
-  expect(employee.getRole()).toBe("employee");
+  expect(employee.getRole()).toBe("Employee");
 });  
 

@@ -4,11 +4,11 @@ const Intern = require("../lib/Intern");
 const Employee = require("../lib/Employee");
 
 function makeEmployeeCard(data){
-    let result = '';
+    let card = ``;
     for (i = 0; i < data.length; i++)  {
     console.log("data:", data)
     console.log(data.length)
-    var card = `
+    card += `
         <div id="employee-card">
             <div>
                 <h2 id="name">${data[i].name}</h2>
@@ -17,28 +17,29 @@ function makeEmployeeCard(data){
             <div>
                 <p id="id">ID:${data[i].id}</p>
                 <p id="email">Email:${data[i].email}</p>`
-                if (data[i].getRole() == "manager") {
+                if (data[i].getRole() == "Manager") {
+                    console.log("Role:", data[i].getRole())
                     card += 
                     ` <p>Office Number: ${data[i].officeNumber}</p>
                     </div>
                     </div>`
                     console.log("This is the office number:", data[i].officeNumber)
-                }  else if (data[i].getRole() == "engineer") {
+                }  else if (data[i].getRole() == "Engineer") {
                     card += 
                     ` <p>Office Number: ${data[i].github}</p>
                     </div>
                     </div>`
                     console.log("This is the github:", data[i].github)
-                }  else if (data[i].getRole() == "intern") {
+                }  else if (data[i].getRole() == "Intern") {
                     card += 
                     ` <p>Office Number: ${data[i].school}</p>
                     </div>
                     </div>`
                     console.log("This is the school:", data[i].school)
                 };
-    return card;
-            }
     
+            }
+            return card;
 };
 
 function pageBuilder(data) {

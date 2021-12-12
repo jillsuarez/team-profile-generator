@@ -8,6 +8,6 @@ test('Employee Github', () => {
   });
 
 test('Employee Role', () => {
-expect(engineer.getRole()).toBe("engineer");
+expect(engineer.getRole()).toBe("Engineer");
 });
 

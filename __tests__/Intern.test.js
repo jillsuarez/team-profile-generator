@@ -1,7 +1,7 @@
 const path = require("path");
 const Intern = require("../lib/Intern");
 
-const intern = new Intern("jeff", "123", "jeff@email.com", "school1", "intern")
+const intern = new Intern("jeff", "123", "jeff@email.com", "school1", "Intern")
 
 test('Employee School', () => {
     expect(intern.getSchool()).toBe("school1");

@@ -7,5 +7,5 @@ test('Employee Office Number', () => {
     expect(manager.getOfficeNumber()).toBe("234");
   });
 test('Employee Role', () => {
-expect(manager.getRole()).toBe("manager");
+expect(manager.getRole()).toBe("Manager");
 });
