@@ -16,23 +16,25 @@ function makeEmployeeCard(data){
             </div>
             <div>
                 <p id="id">ID:${data[i].id}</p>
-                <p id="email">Email:${data[i].email}</p>`
+                <p id="email">
+                    Email:<a href="mailto:${data[i].email}">${data[i].email}</a>
+                </p>`
                 if (data[i].getRole() == "Manager") {
                     console.log("Role:", data[i].getRole())
                     card += 
-                    ` <p>Office Number: ${data[i].officeNumber}</p>
+                    `<p>Office Number: ${data[i].officeNumber}</p>
                     </div>
                     </div>`
                     console.log("This is the office number:", data[i].officeNumber)
                 }  else if (data[i].getRole() == "Engineer") {
                     card += 
-                    ` <p>Office Number: ${data[i].github}</p>
+                    `<p>GitHub: ${data[i].github}</p>
                     </div>
                     </div>`
                     console.log("This is the github:", data[i].github)
                 }  else if (data[i].getRole() == "Intern") {
                     card += 
-                    ` <p>Office Number: ${data[i].school}</p>
+                    `<p>School: ${data[i].school}</p>
                     </div>
                     </div>`
                     console.log("This is the school:", data[i].school)
