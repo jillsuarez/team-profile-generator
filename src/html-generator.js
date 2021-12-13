@@ -6,8 +6,6 @@ const Employee = require("../lib/Employee");
 function makeEmployeeCard(data){
     let card = ``;
     for (i = 0; i < data.length; i++)  {
-    console.log("data:", data)
-    console.log(data.length)
     card += `
         <div id="employee-card">
             <div>
@@ -20,24 +18,22 @@ function makeEmployeeCard(data){
                     Email:<a href="mailto:${data[i].email}">${data[i].email}</a>
                 </p>`
                 if (data[i].getRole() == "Manager") {
-                    console.log("Role:", data[i].getRole())
                     card += 
                     `<p>Office Number: ${data[i].officeNumber}</p>
                     </div>
                     </div>`
-                    console.log("This is the office number:", data[i].officeNumber)
                 }  else if (data[i].getRole() == "Engineer") {
                     card += 
-                    `<p>GitHub: ${data[i].github}</p>
+                    `<p>
+                        GitHub: <a href="https://github.com/${data[i].github}" target="_blank">${data[i].github}</a>
+                    </p>
                     </div>
                     </div>`
-                    console.log("This is the github:", data[i].github)
                 }  else if (data[i].getRole() == "Intern") {
                     card += 
                     `<p>School: ${data[i].school}</p>
                     </div>
                     </div>`
-                    console.log("This is the school:", data[i].school)
                 };
     
             }
@@ -53,10 +49,14 @@ function pageBuilder(data) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Profile</title>
+    
+    
+
 </head>
 <body>
     <h1>My Team</h1>
 <div id="employee-area">${makeEmployeeCard(data)}</div>
+
 </body>
 </html>
     `

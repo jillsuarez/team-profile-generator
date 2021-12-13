@@ -59,14 +59,12 @@ function promptUser(){
     return inquirer.prompt(manQuestions).then(answer => {
         const manager = new Manager(answer.manName, answer.manId, answer.manEmail, answer.manOffice);
         teamMembers.push(manager);
-        // console.log(teamMembers);
     })
     
 }
 
 
 function promptEmployee(){
-    // use inquirer to ask about engineer
     const empQuestions = [
         {
             type: "confirm",
@@ -157,7 +155,6 @@ function promptEmployee(){
         }
     })
     .then(buildTeam); 
-    // console.log(teamMembers)
 };
 
 function buildTeam(){
@@ -165,11 +162,9 @@ function buildTeam(){
     if (!fs.existsSync(targetDirectory)){
         fs.mkdirSync(targetDirectory)
     }
-    // console.log(pageBuilder(teamMembers));
     fs.writeFileSync(path.join(targetDirectory,"team.html"),pageBuilder(teamMembers), "utf-8");
 }
 
 promptUser()
-.then(promptEmployee)
-// .then(buildTeam); 
+.then(promptEmployee) 
 
